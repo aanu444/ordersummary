@@ -1,0 +1,196 @@
+body {
+  background-image: url("images/pattern-background-desktop.svg");
+}
+
+@mixin flex {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+$primaryColor: #4a3c97;
+
+header,
+div {
+  border: 0px solid black;
+}
+
+.item-container {
+  @include flex;
+
+  .item {
+    flex-basis: 25%;
+    display: flex;
+    flex-flow: row wrap;
+    background-color: #fff;
+    min-height: 400px;
+    margin-top: 50px;
+    border-radius: 3%;
+    box-shadow: 10px 10px 5px grey;
+
+    .header-top {
+      flex-basis: 100%;
+      min-height: 150px;
+      border-radius: 3% 3% 0 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 3% 3% 0 0;
+      }
+    }
+
+    .order-text {
+      flex-basis: 100%;
+
+      h1 {
+        font-size: 1.4rem;
+        color: $primaryColor;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      p {
+        color: grey;
+        text-align: center;
+        font-size: 1rem;
+      }
+    }
+
+    .annual-container {
+      @include flex;
+      flex-basis: 100%;
+
+      .annual-plan {
+        flex-basis: 90%;
+        display: flex;
+        flex-flow: row wrap;
+        background-color: #eae9ee;
+        border-radius: 5%;
+        height: 80px;
+        margin-top: 20px;
+
+        .img,
+        .text,
+        .btn {
+          flex-basis: 30%;
+          margin-left: 4px;
+          height: 80px;
+        }
+
+        .img {
+          img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            width: 45%;
+            height: 45%;
+          }
+        }
+      }
+
+      .text {
+        p {
+          color: grey;
+          font-size: 0.9rem;
+        }
+
+        .bolden {
+          color: $primaryColor;
+          font-weight: bolder;
+        }
+      }
+
+      .btn {
+        a {
+          display: block;
+          text-decoration: none;
+          color: grey;
+          font-size: 0.9rem;
+          font-weight: bolder;
+          margin-top: 20px;
+          text-align: center;
+        }
+
+        a:hover {
+          color: $primaryColor;
+        }
+      }
+    }
+
+    .proceed {
+      flex-basis: 100%;
+      min-height: 50px;
+
+      button {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        width: 90%;
+        border: 1px solid $primaryColor;
+        background-color: $primaryColor;
+        padding: 10px;
+        border-radius: 10px;
+
+        a {
+          text-decoration: none;
+          color: white;
+          display: block;
+          text-align: center;
+          font-weight: bold;
+        }
+      }
+
+      button:hover {
+        background-color: #30237b;
+      }
+
+      .special {
+        color: grey;
+        display: block;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 10px;
+        text-decoration: none;
+        font-size: 0.95rem;
+        padding: 5px;
+      }
+
+      .special:hover {
+        color: #30237b;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 320px) {
+  body {
+    background-image: url("images/pattern-background-mobile.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .item-container {
+    .item {
+      flex-basis: 80%;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .item-container {
+    .item {
+      flex-basis: 40%;
+    }
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .item-container {
+    .item {
+      flex-basis: 30%;
+    }
+  }
+}
